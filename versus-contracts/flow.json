@@ -1,0 +1,91 @@
+{
+  "emulators": {
+    "default": {
+      "port": 3569,
+      "serviceAccount": "emulator-account"
+    }
+  },
+  "contracts": {
+    "NonFungibleToken": {
+      "source": "./contracts/standard/NonFungibleToken.cdc",
+      "aliases": {
+        "testnet": "0x631e88ae7f1d7c20",
+        "mainnet": "0x1d7e57aa55817448"
+      }
+    },
+    "FungibleToken": {
+      "source": "./contracts/standard/FungibleToken.cdc",
+      "aliases": {
+        "testnet": "0x9a0766d93b6608b7",
+        "emulator": "0xee82856bf20e2aa6",
+        "mainnet" :"0xf233dcee88fe0abe"
+      }
+    },
+    "FlowToken": {
+      "source": "./contracts/standard/FlowToken.cdc",
+      "aliases": {
+        "testnet": "0x7e60df042a9c0868",
+        "emulator": "0x0ae53cb6e3f42a79",
+        "mainnet" : "0x1654653399040a61"
+      }
+    },
+    "FUSD": {
+      "source": "./contracts/standard/FUSD.cdc",
+      "aliases": {
+        "testnet": "0xe223d8a629e49c68",
+        "mainnet": "0x3c5959b568896393"
+      }
+    },
+    "Content": "./contracts/Content.cdc",
+    "Art": "./contracts/Art.cdc",
+    "Auction": "./contracts/Auction.cdc",
+    "Versus": "./contracts/Versus.cdc",
+    "Marketplace": "./contracts/Marketplace.cdc",
+    "Profile": "./contracts/Profile.cdc"
+  },
+  "networks": {
+    "emulator": "127.0.0.1:3569",
+    "mainnet": "access.mainnet.nodes.onflow.org:9000",
+    "testnet": "access.devnet.nodes.onflow.org:9000"
+  },
+  "accounts": {
+    "emulator-account": {
+      "address": "f8d6e0586b0a20c7",
+      "key": "d5457a187e9642a8e49d4032b3b4f85c92da7202c79681d9302c6e444e7033a8"
+    },
+    "emulator-artist": {
+      "address": "01cf0e2f2f715450",
+      "key": "e6e86608602deea81807fd9d393bfc40d84f11589254a13708425164992da0e0"
+    },
+    "emulator-buyer1": {
+      "address": "179b6b1cb6755e31",
+      "key": "7c98111930ef3c9f8a5577826726d6f58cbdfb2c4a7eb50e3a3f342eb58535dd"
+    },
+    "emulator-buyer2": {
+      "address": "f3fcd2c1a78f5eee",
+      "key": "e9b41af6aa819bc04a1a97263233d16bfe2f51b03a5026e1ece1e7295a4eab63"
+    },
+    "emulator-marketplace": {
+      "address": "e03daebed8ca0615",
+      "key": "961d3beda4261c26d0cd4a3ef230ec36f015a29bdaef45b64debc6393c87fa18"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "emulator-account": [
+        "NonFungibleToken",
+        "Content",
+        "Art", 
+        "Auction", 
+        "Versus",
+        "Marketplace",
+        "Profile",
+        "FUSD"
+      ],
+      "emulator-artist" : [],
+      "emulator-buyer1" : [],
+      "emulator-buyer2" : [],
+      "emulator-marketplace" : []
+    }
+  }
+}
